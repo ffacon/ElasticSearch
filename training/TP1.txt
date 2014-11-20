@@ -19,3 +19,16 @@ curl -XPUT 'http://localhost:9200/data/produit/1' -d '{
 {"_index":"data","_type":"produit","_id":"1","_version":1,"created":true}
 version 1 du document
 
+- récupérer le document indexé 
+
+curl -XGET 'http://localhost:9200/data/produit/1'
+
+{"_index":"data","_type":"produit","_id":"1","_version":1,"found":true,"_source":{
+"code": "S10_1949",
+"nom": "1952 Alpine Renault 13003",
+"echelle": "1:10",
+"fournisseur": "Classic Metal",
+"stock": "7305",
+"prix": "98.58",
+"devise": "EUR"
+}}
