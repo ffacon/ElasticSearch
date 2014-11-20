@@ -1,0 +1,6 @@
+install Elasticsearch-head 
+——————————————————————————
+./bin/plugin -install mobz/elasticsearch-head
+lancement srv ->  ./bin/elasticsearch
+http://localhost:9200/_plugin/head
+
