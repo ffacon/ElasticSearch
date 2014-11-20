@@ -4,3 +4,18 @@ install Elasticsearch-head
 lancement srv ->  ./bin/elasticsearch
 http://localhost:9200/_plugin/head
 
+- indexation dans l’index data du document du type produit
+
+curl -XPUT 'http://localhost:9200/data/produit/1' -d '{
+	"code": "S10_1949",
+	"nom": "1952 Alpine Renault 13003",
+	"echelle": "1:10",
+	"fournisseur": "Classic Metal",
+	"stock": "7305",
+	"prix": "98.58",
+	"devise": "EUR"
+}'
+
+{"_index":"data","_type":"produit","_id":"1","_version":1,"created":true}
+version 1 du document
+
