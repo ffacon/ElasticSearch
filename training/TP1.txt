@@ -77,3 +77,26 @@ curl -XGET 'http://localhost:9200/data/produit/_search?q=Renault'
 			}]
 	}
 }
+
+-rechercher tous les documents dont le champ fournisseur contient le mot classic
+
+curl -XGET 'http://localhost:9200/data/produit/_search?q=fournisseur:classic'
+
+{
+	"took":5,"timed_out":false,
+	"_shards":{
+			"total":5,"successful":5,"failed":0},
+			"hits":{
+					"total":1,"max_score":0.19178301,"hits":
+					[{
+						"_index":"data","_type":"produit","_id":"1","_score":0.19178301,
+						"_source":{
+								"code": "S10_1949","nom": "1952 Alpine Renault 13003","echelle": "1:10",
+								"fournisseur": "Classic Metal","stock": "7305","prix": "98.58","devise": "EUR"
+							   }
+					}]
+			}
+	}
+}
+
+
