@@ -47,3 +47,33 @@ curl -XPUT 'http://localhost:9200/data/produit/2' -d '{
 	"devise": "EUR"
 }'
 
+-rechercher tous les documents contenant le mot Renault 
+
+curl -XGET 'http://localhost:9200/data/produit/_search?q=Renault'
+
+
+{
+	"took":4,
+	"timed_out":false,
+	"_shards":{
+			"total":5,"successful":5,"failed":0
+	},
+	"hits":{
+		"total":2,"max_score":0.076713204,
+		"hits":[{
+				"_index":"data","_type":"produit","_id":"1","_score":0.076713204,
+				"_source":{	
+					"code": "S10_1949","nom": "1952 Alpine Renault 13003",
+					"echelle": "1:10","fournisseur": "Classic Metal",
+					"stock": "7305","prix":"98.58","devise":"EUR"
+				}
+			},
+			{	"_index":"data","_type":"produit","_id":"2","_score":0.076713204,
+				"_source":{
+					"code": "S24_3371","nom": "1971 Alpine Renault 1600S",
+					"echelle": "1:24","fournisseur": "WELLY",
+					"stock": "7995","prix": "38.58","devise": "EUR"
+				}
+			}]
+	}
+}
