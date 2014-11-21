@@ -32,3 +32,18 @@ curl -XGET 'http://localhost:9200/data/produit/1'
 "prix": "98.58",
 "devise": "EUR"
 }}
+
+
+
+- indexation dans l’index data du document 2 de type produit
+
+curl -XPUT 'http://localhost:9200/data/produit/2' -d '{
+	"code": "S24_3371",
+	"nom": "1971 Alpine Renault 1600S",
+	"echelle": "1:24",
+	"fournisseur": "WELLY",
+	"stock": "7995",
+	"prix": "38.58",
+	"devise": "EUR"
+}'
+
