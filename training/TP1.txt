@@ -99,4 +99,6 @@ curl -XGET 'http://localhost:9200/data/produit/_search?q=fournisseur:classic'
 	}
 }
 
+- supprimer les index
 
+curl -XDELETE 'http://localhost:9200/data/‘
